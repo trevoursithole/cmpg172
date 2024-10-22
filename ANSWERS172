@@ -1,0 +1,184 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int SIZE = 50;
+    double alpha[SIZE];
+
+
+    for (int i = 0; i < SIZE; i++) {
+        if (i < 25) {
+            alpha[i] = i * i;
+        } else {
+            alpha[i] = 3 * i;
+        }
+    }
+
+
+    for (int i = 0; i < SIZE; i++) {
+       cout << alpha[i] << " ";
+
+
+        if ((i + 1) % 10 == 0) {
+           cout << endl;
+        }
+    }
+
+    return 0;
+}
+
+
+//palindrome program
+
+#include <iostream>
+
+using namespace std;
+
+bool isNumPalindrome( int num){
+
+
+if (num<0){
+    return false;
+}
+int reverse=0;
+int original=num;
+
+
+while(num!=0){
+
+    reverse =reverse*10 + num%10;
+    num/=10;
+}
+return original=reverse;
+}
+
+int main(){
+
+int num;
+
+cout<<"Enter a value:";
+cin>>num;
+
+cout<<"Is value"<<" "<<num<<" "<<"Palindrome?"<<" "<<isNumPalindrome(num)<<endl;
+
+
+return 0;
+
+}
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+
+string word;
+char c;
+int count=0;
+
+do{
+
+    cout<<"Enter your word:";
+    cin>>word;
+}while(word.length()<5);
+
+
+cout<<"Choose a character from a word you entered:"<<endl;
+cin>>c;
+
+for( int i=0;i<word.length();i++)
+    {
+
+
+    if(word[i]==c){
+
+        count++;
+    }
+}
+
+
+cout << "The character '" << c << "' appears " << count << " times in the word '" << word << "'" << endl;
+
+return 0;
+};
+
+
+//program that enters yours score and print out reaction
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int score;
+
+    cout << "Enter your score (0-100): ";
+    cin >> score;
+
+    if (score < 0 || score > 100) {
+        cout << "Invalid input. Please enter a score between 0 and 100." << endl;
+        return 1;
+    }
+
+    switch (score / 10) {
+        case 10:
+        case 9:
+            cout << "Awesome" << endl;
+            break;
+        case 8:
+            cout << "Well done" << endl;
+            break;
+        case 7:
+            cout << "Average" << endl;
+            break;
+        case 6:
+            cout << "Booing" << endl;
+            break;
+        default:
+            cout << "Very sad" << endl;
+            break;
+    }
+
+    return 0;
+}
+
+//program that takes 2 values and return maximum and the one that returns minimum;
+#include <iostream>
+
+using namespace std;
+
+int max(int a, int b)
+{
+return (a>b)?a:b;
+}
+
+int min(int a, int b){
+
+return (a<b)?a:b;
+
+}
+
+int main(){
+
+int num1,num2;
+
+cout<<"Enter num1:";
+cin>>num1;
+
+cout<<"Enter num2:";
+cin>>num2;
+
+int maxValue=max(num1,num2);
+
+int minValue=min(num1,num2);
+
+cout<<"Maximum value="<<maxValue<<endl;
+
+cout<<"Minimum value="<<minValue<<endl;
+
+return 0;
+
+}
+
+
+
